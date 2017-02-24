@@ -22,7 +22,7 @@
         <div id="signup">
           <h1>Sign Up for Free</h1>
 
-          <form action="/register/create" method="POST">
+          <form action="/register/create" method="post">
 
           <div class="top-row">
             <div class="field-wrap">
@@ -30,14 +30,14 @@
 
                 <span class="req"></span>
               </label>
-              <input type="text" required autocomplete="off" placeholder="Username"/>
+              <input type="text" name="username" required autocomplete="off" placeholder="Username"/>
             </div>
 
             <div class="field-wrap">
               <label>
                 <span class="req"></span>
               </label>
-              <input type="text"required autocomplete="off" placeholder="Password"/>
+              <input name="email" type="text" required autocomplete="off" placeholder="Email"/>
             </div>
           </div>
 
@@ -45,15 +45,9 @@
             <label>
               <span class="req"></span>
             </label>
-            <input type="email"required autocomplete="off" placeholder="Email"/>
+            <input name="password" type="password"required autocomplete="off" placeholder="Password"/>
           </div>
 
-          <!-- <div class="field-wrap">
-            <label>
-              <span class="req"></span>
-            </label>
-            <input type="password"required autocomplete="off" placeholder="Password"/>
-          </div> -->
           <div class="field-wrap">
             <select name="role" class="roles">
               <option value="admin">Admin</option>
@@ -61,8 +55,8 @@
             </select>
           </div>
 
-          <button type="submit" class="button button-block"/>Register</button>
-
+          <!-- <button type="submit" name="submit" class="button button-block"/>Register</button> -->
+          <input type="submit" name="submit" placeholder="Register">
           </form>
 
         </div>

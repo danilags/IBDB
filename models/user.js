@@ -14,23 +14,23 @@ module.exports = function(sequelize, DataTypes) {
         // associations can be defined here
       }
     },
-    hooks : {
-      beforeCreate : function(pass, option) {
-        var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-        var secret = ''
-        for (var i = 0; i < 5; i++) {
-          secret += alphabet.charAt(Math.floor(Math.random() + alphabet.length))
-        }
-
-        //const salt = 'daniel123';
-        const hash_password = crypto.createHmac('sha256', salt)
-                           .update('Daniel PALA BATAK')
-                           .digest('hex');
-        // console.log(hash_password);
-        pass.password = hash_password
-        pass.salt = secret
-      }
-    }
+    // hooks : {
+    //   beforeCreate : function(pass, option) {
+    //     var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    //     var secret = ''
+    //     for (var i = 0; i < 5; i++) {
+    //       secret += alphabet.charAt(Math.floor(Math.random() + alphabet.length))
+    //     }
+    //
+    //     //const salt = 'daniel123';
+    //     const hash_password = crypto.createHmac('sha256', salt)
+    //                        .update('Daniel PALA BATAK')
+    //                        .digest('hex');
+    //     // console.log(hash_password);
+    //     pass.password = hash_password
+    //     pass.salt = secret
+    //   }
+    // }
   });
   return User;
 };

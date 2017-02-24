@@ -16,6 +16,7 @@ router.post('/register/create', function(req, res, next) {
     res.redirect('/')
   }).catch(function(err) {
     res.redirect('/register')
+    console.log(err.message);
   })
 })
 
