@@ -45,4 +45,25 @@ router.post('/admin/edit/:id', function(req, res, next) {
   })
 })
 
+router.get('/admin/delete/:id', function(req, res) {
+  db.User.destroy({
+    where : {
+      id : req.params.id
+    }
+  }).then(function() {
+    res.redirect('/admin')
+  })
+})
+
+// create books
+
+router.post('/register/create', function(req, res, next) {
+  db.Book.create(req.body).then(function(data) {
+    res.redirect('/')
+  }).catch(function(err) {
+    res.redirect('/register')
+    console.log(err.message);
+  })
+})
+
 module.exports = router;
