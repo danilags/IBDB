@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome Admin</h1>
+    <button><a href="/">Logout</a></button>
+
+    <table>
+      <tr>
+        <td>ID.</td>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Roles</td>
+        <td>Updated</td>
+      </tr>
+
+      <% for(var i = 0; i < data_admin.length; i++) { %>
+        <tr>
+          <td><%= data_admin[i].id %></td>
+          <td><%= data_admin[i].username %></td>
+          <td><%= data_admin[i].email %></td>
+          <td><%= data_admin[i].password %></td>
+          <td><%= data_admin[i].role %></td>
+          <td><%= data_admin[i].createdAt %></td>
+          <td><a href="admin/edit/<%= data_admin[i].id %>">Edit</a></td>
+          <td><a href="admin/delete/<%= data_admin[i].id %>">Delete</a></td>
+        </tr>
+      <% } %>
+    </table>
+  </body>
+</html>

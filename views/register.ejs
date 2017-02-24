@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Menu Bar Register</h1>
+    <div class="tab"    >
+      <a href="./">Cancel</a>
+    </div>
+    <br>
+    <form action="/register/create" method="POST">
+      Username :
+      <input type="text" name="username">
+      Email :
+      <input type="text" name="email">
+      password :
+      <input type="password" name="password">
+      <select name="role">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+      <input type="submit" name="submit" placeholder="Register">
+    </form>
+  </body>
+</html>

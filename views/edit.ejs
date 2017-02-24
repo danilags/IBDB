@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Menu Bar Edit</h1>
+    <h1><a href="/admin">Kembali</a></h1>
+    <br>
+    <form action="/admin/edit/<%= data_admin.id %>" method="POST">
+      Username :
+      <input type="text" name="username" value="<%= data_admin.username %>">
+      Email :
+      <input type="text" name="email" value="<%= data_admin.email %>">
+      password :
+      <input type="password" name="password" value="<%= data_admin.password %>">
+      <select name="role" value="<%= data_admin.role %>">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+      <input type="submit" name="submit" placeholder="Register">
+    </form>
+  </body>
+</html>
